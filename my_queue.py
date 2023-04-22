@@ -10,7 +10,7 @@ async def my_queue_callback(message: aio_pika.IncomingMessage):
 
     This function will be called when a message is received from the queue."""
     try:
-        print(f" [x] Received {message.body}")
+        print(f" [x] Received {message.body.decode()}")
         await message.ack()
     except Exception as e:
         print("Error:", e)
