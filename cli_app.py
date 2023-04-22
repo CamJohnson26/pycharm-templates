@@ -2,6 +2,7 @@ from cmd import Cmd
 
 
 class CLIApp(Cmd):
+    prompt = '>>> '
 
     def do_greet(self, args):
         first_name, last_name = args.rsplit(" ", 1)
