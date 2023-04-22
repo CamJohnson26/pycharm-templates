@@ -15,7 +15,7 @@ RABBITMQ_USERNAME = os.getenv("RABBITMQ_USERNAME")
 RABBITMQ_PASSWORD = os.getenv("RABBITMQ_PASSWORD")
 
 
-def publish_message_my_queue(message: str, queue_name: str):
+def publish_message(message: str, queue_name: str):
     """Publish a message to the queue
 
     This function will publish a message to the queue."""
