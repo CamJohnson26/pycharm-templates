@@ -69,6 +69,7 @@ async def setup_rabbitmq(loop: asyncio.AbstractEventLoop, queues: list[tuple[str
                                                login=RABBITMQ_USERNAME, password=RABBITMQ_PASSWORD, loop=loop)
 
     channel = await connection.channel()
+    await channel.set_qos(prefetch_count=1)
 
     # Declare the dead letter exchange
     dead_letter_exchange = await channel.declare_exchange('dead_letter_exchange', aio_pika.ExchangeType.DIRECT)
