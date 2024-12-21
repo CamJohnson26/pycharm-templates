@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 import os
 
-from bookmark_library.library_db.queries.get_entity_query import get_entity_query
+from pycharm_templates_db.queries.query import get_entity_query
 
 load_dotenv()
 DATABASE_URL = os.getenv("DATABASE_URL")
